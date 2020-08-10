@@ -1,24 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './componets/Header';
+import Navbar from './componets/Navbar';
+import Profile from './componets/Profile';
 
-function App() {
-  return (
+// Стрелочная функция
+// Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
+const App = () =>{
+  return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-wrepper">
+        
+        <Header />
+        <Navbar />
+        <Profile />
+        <footer className="footer">
+
+        </footer> 
+      </div>
+        
     </div>
   );
 }
