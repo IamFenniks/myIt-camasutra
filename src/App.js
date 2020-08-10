@@ -7,19 +7,23 @@ import Profile from './componets/Profile/Profile';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
-const App = () =>{
+const App = () => {
   return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <div className="App">
-      <div className="app-wrepper">
-        
-        <Header />
-        <Navbar />
-        <Profile />
-        <footer className="footer">
+      <div className="app-wrapper">
 
-        </footer> 
+        <Header />
+        <nav className="app-wrapper__nav nav">
+          <Navbar />
+        </nav>
+        <article className="app-wrapper__article article">
+          <Profile />
+        </article>
+        <footer className="app-wrapper__footer footer">
+
+        </footer>
       </div>
-        
+
     </div>
   );
 }
