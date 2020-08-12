@@ -4,7 +4,7 @@ import s from './Header.module.css';
 const Header = () =>{
     return(
         <header className={s.header}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-Ur5t_tg3BxCzyZ4HWJNv_Du4pr_nzqHn-Q&usqp=CAU" alt="Logo" />
+            <img src="https://www.flaticon.com/premium-icon/icons/svg/2549/2549323.svg" alt="Logo" />
         </header>
     );
 }

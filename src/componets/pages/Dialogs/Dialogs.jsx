@@ -3,12 +3,54 @@ import s from './Dialogs.module.css';
 
 const Dialogs = (props) => {
   return (
-    <div>
-      <h1>{props.title}</h1>
+    <div className={s.dialogs}>
+      <div className={s.dialogs__users}>
+        <h1>Dialogs</h1>
 
-      <div className={s.describe}>
-        <img src="https://cdn.pixabay.com/photo/2016/06/14/09/33/bulldog-1456110__340.png" alt="Image" />
+        <div className={s.user}>Nick</div>
+        <div className={s.user + ' ' + s.active}>Nick</div>
+        <div className={s.user}>Nick</div>
+        <div className={s.user}>Nick</div>
+        <div className={s.user}>Nick</div>
+        <div className={s.user}>Nick</div>
+        <div className={s.user}>Nick</div>
+      </div>
+
+      <div className={s.dialogs__messages}>
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
         
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
+
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
+
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
+
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
+
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
+
+        <div className={s.messageItem}>
+          <h4>ItemTitle</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto adipisci molestias reprehenderit!</p>
+        </div>
       </div>
     </div>
   );
