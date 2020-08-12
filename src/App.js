@@ -13,7 +13,7 @@ import Dialogs from './componets/pages/Dialogs/Dialogs';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
-const App = () => {
+const App = (props) => {
   return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <BrowserRouter>
       <div className="app-wrapper">
