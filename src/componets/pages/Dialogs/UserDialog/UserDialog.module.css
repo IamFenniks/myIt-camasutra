@@ -1,0 +1,17 @@
+.user{
+    margin-bottom: 12px;
+    padding: 12px;
+    margin-right: 12px;
+}
+a{text-decoration: none;}
+
+.active{
+    border: 1px solid lightgray;
+    color: gold;
+    text-decoration: underline;
+}
+.user:hover{
+    border: 1px solid lightgray;
+    padding: 10px;
+    cursor: pointer;
+}

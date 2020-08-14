@@ -5,7 +5,7 @@ import Post from './Post/Post';
 const MyPosts = () => {
   return (
     <div>
-      <h1>All posts</h1>
+      <h2>My posts</h2>
       <div className={s.posts}>
         <Post title="Post 1" like="23" />
         <Post title="Post 2" like="432" />

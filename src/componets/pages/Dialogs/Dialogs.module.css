@@ -1,34 +1,10 @@
 .dialogs{
     display: grid;
-
     grid-template-columns: 4fr 8fr;
 }
 .dialogs__users{
 
 }
-.user{
-    margin-bottom: 12px;
-    padding: 12px;
-    margin-right: 12px;
-}
-.user.active{
-    border: 1px solid lightgray;
-}
-.user:hover{
-    border: 1px solid lightgray;
-    padding: 10px;
-    cursor: pointer;
-}
 
 .dialogs__messages{
-}
-.messageItem{
-    padding: 12px;
-    border: 1px solid lightgray;
-    margin-bottom: 12px;
-}
-.messageItem:hover{
-    background-color: lightgray;
-    cursor: pointer;
-    color: white;
 }

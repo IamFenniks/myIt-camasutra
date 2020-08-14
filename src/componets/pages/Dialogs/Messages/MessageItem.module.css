@@ -1,0 +1,10 @@
+.messageItem{
+    padding: 12px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+}
+.messageItem:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    color: white;
+}
