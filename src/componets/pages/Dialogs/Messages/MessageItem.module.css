@@ -4,7 +4,7 @@
     margin-bottom: 12px;
 }
 .messageItem:hover{
-    background-color: lightgray;
+    background-color: darkslateblue;
     cursor: pointer;
     color: white;
 }
