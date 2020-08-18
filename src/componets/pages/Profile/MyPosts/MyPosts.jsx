@@ -2,7 +2,8 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
   let posts = [
     {id: 0, title: 'Post 1', like: 23},
     {id: 1, title: 'Post 2', like: 432},
@@ -12,12 +13,13 @@ const MyPosts = () => {
   ];
   let postsData = posts
     .map(p => <Post title={p.title} like={p.like} />);
+  
 
-  return (
+   return (
     <div>
       <h2>My posts</h2>
       <div className={s.posts}>
-        {postsData}
+        {props.postsData}
       </div>
     </div>
   );
