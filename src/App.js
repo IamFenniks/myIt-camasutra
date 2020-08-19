@@ -11,11 +11,12 @@ import News from './componets/pages/News/News';
 import Settings from './componets/pages/Settings/Settings';
 import Dialogs from './componets/pages/Dialogs/Dialogs';
 
-let SomeComponent = () => <Dialogs />;
-
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
 const App = (props) => {
+  
+  let SomeComponent = () => <Dialogs dialogsData={ props.dialogsData } />;
+
   return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <BrowserRouter>
       <div className="app-wrapper">
@@ -28,7 +29,7 @@ const App = (props) => {
         <article className="app-wrapper__article article">
           <Route path='/profile' render={ () => <Profile postsData={props.postsData} /> } />
           <Route path='/dialogs' component={ SomeComponent } />
-          <Route path='/news' component={ News } />
+          <Route path='/news' component={ () => <News /> } />
           <Route path='/music' component={ Music } />
           <Route path='/settings' component={ Settings } />
         </article>

@@ -5,15 +5,6 @@ import UserDialog from './UserDialog/UserDialog';
 import MessageItem from './Messages/MessageItem';
 
 const Dialogs = (props) => {
-  let dialogsData = [
-    { id: 0, name: 'Nick' },
-    { id: 1, name: 'Mishele' },
-    { id: 2, name: 'Victor' },
-    { id: 3, name: 'Andrey' },
-    { id: 4, name: 'John' },
-    { id: 5, name: 'Tom' },
-    { id: 6, name: 'Anna' }
-  ];
   // let dialogsItem = [
   //   <UserDialog userName={dialogsData[0].name} id={dialogsData[0].id} />,
   //   <UserDialog userName={dialogsData[1].name} id={dialogsData[1].id} />,
@@ -23,9 +14,8 @@ const Dialogs = (props) => {
   //   <UserDialog userName={dialogsData[5].name} id={dialogsData[5].id} />,
   //   <UserDialog userName={dialogsData[6].name} id={dialogsData[6].id} />
   // ];
-  let dialogsItem = dialogsData
-    .map(dialog => <UserDialog userName={dialog.name} id={dialog.id} />);
 
+  /* {Здесь оставлю для наглядности неоптимизированный код} */
   let messageData = [
     { id: 0, title: 'Nick`s message 1', mess: 'Lorem 1 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
     { id: 1, title: 'Anna message 1', mess: 'Lorem 2 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
@@ -37,7 +27,7 @@ const Dialogs = (props) => {
     <div className={s.dialogs}>
       <div className={s.dialogs__users}>
         <h1>Dialogs</h1>
-        {dialogsItem}
+        {props.dialogsData}
       </div>
 
       <div className={s.dialogs__messages}>

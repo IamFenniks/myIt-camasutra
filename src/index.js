@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Post from './componets/pages/Profile/MyPosts/Post/Post';
+import UserDialog from './componets/pages/Dialogs/UserDialog/UserDialog';
 
+// Profile -> Posts  Profile -> Posts  Profile -> Posts 
 let posts = [
   {id: 0, title: 'Post 1', like: 23},
   {id: 1, title: 'Post 2', like: 432},
@@ -15,9 +17,33 @@ let posts = [
 let postsData = posts
   .map(p => <Post title={p.title} like={p.like} />);
 
+// Profile -> Posts  Profile -> Posts  Profile -> Posts 
+//-----------------------------------------------------
+// Dialogs -> Users  Dialogs -> Users  Dialogs -> Users 
+
+let dialogsData = [
+  { id: 0, name: 'Nick' },
+  { id: 1, name: 'Mishele' },
+  { id: 2, name: 'Victor' },
+  { id: 3, name: 'Andrey' },
+  { id: 4, name: 'John' },
+  { id: 5, name: 'Tom' },
+  { id: 6, name: 'Anna' }
+];
+let dialogsItem = dialogsData
+  .map(dialog => <UserDialog userName={dialog.name} id={dialog.id} />);
+
+// Dialogs -> Users  Dialogs -> Users  Dialogs -> Users 
+//-----------------------------------------------------
+// Dialogs -> Messa  Dialogs -> Messa  Dialogs -> Messa
+
+
+
+// Dialogs -> Messa  Dialogs -> Messa  Dialogs -> Messa
+
 ReactDOM.render(
   <React.StrictMode>
-    <App postsData={postsData}/>
+    <App postsData={ postsData } dialogsData={ dialogsItem } />
   </React.StrictMode>,
   document.getElementById('root')
 );
