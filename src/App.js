@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header   from './componets/Header/Header';
-import Navbar   from './componets/Navbar/Navbar';
+import Navbar   from './componets/Sidebar/Navbar/Navbar';
 import Profile  from './componets/pages/Profile/Profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Music    from './componets/pages/Music/Music';
@@ -10,6 +10,7 @@ import Setting  from './componets/pages/Settings/Settings';
 import News     from './componets/pages/News/News';
 import Settings from './componets/pages/Settings/Settings';
 import Dialogs  from './componets/pages/Dialogs/Dialogs';
+import Sidebar from './componets/Sidebar/Sidebar';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
@@ -19,9 +20,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
 
-        <nav className="app-wrapper__nav nav">
-          <Navbar />
-        </nav>
+        <Sidebar state={props.state.sideBar} />
 
         <article className="app-wrapper__article article">
           <Route path='/profile'
@@ -31,6 +30,7 @@ const App = (props) => {
               /> 
             } 
           />
+
           <Route path='/dialogs'
            render={ () => 
               <Dialogs 
@@ -38,6 +38,7 @@ const App = (props) => {
               /> 
             } 
           />
+
           <Route path='/news' component={ () => <News /> } />
           <Route path='/music' component={ Music } />
           <Route path='/settings' component={ Settings } />

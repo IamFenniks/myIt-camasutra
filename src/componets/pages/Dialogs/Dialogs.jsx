@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
 import UserDialog from './UserDialog/UserDialog';
-import MessageItem from './Messages/MessageItem';
+import MessageItems from './Messages/MessageItems';
 
 debugger;
 
@@ -10,7 +10,7 @@ debugger;
 const Dialogs = (props) => {
 
   let dialogsElements = props.state.dialogs.map(d => <UserDialog userName={d.name} id={d.id} />);
-  let messageElements = props.state.messages.map(m => <MessageItem messTitle={m.title} mess={m.mess} />);
+  let messageElements = <MessageItems state={props.state} />;
   
   return (
     <div className={s.dialogs}>
@@ -20,7 +20,9 @@ const Dialogs = (props) => {
       </div>
 
       <div className={s.dialogs__messages}>
+        <h1>Messages</h1>
         { messageElements }
+        
       </div>
     </div>
   );

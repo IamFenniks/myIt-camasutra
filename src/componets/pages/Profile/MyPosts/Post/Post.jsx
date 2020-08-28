@@ -7,7 +7,7 @@ const Post = (props) => {
       <hr/>
       <h2>{props.title}</h2>
       
-      <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png" alt="postAvatar" />
+      <img src="https://img1.freepng.ru/20180701/btv/kisspng-computer-icons-avatar-user-profile-man-avatars-5b38adb9f113b0.3674732815304411459875.jpg" alt="postAvatar" />
       <p>Like<span> {props.like}</span></p>
     </div>
   );

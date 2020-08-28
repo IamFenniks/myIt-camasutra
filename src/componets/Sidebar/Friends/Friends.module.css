@@ -1,0 +1,9 @@
+.item{
+    padding: 5px;
+    text-align: center;
+}
+img{
+    width: 32px;
+    height: auto;
+    border-radius: 10em;
+}

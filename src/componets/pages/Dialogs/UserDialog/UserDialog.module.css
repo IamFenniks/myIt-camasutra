@@ -1,4 +1,7 @@
 .user{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     margin-bottom: 12px;
     padding: 12px;
     margin-right: 12px;
@@ -15,3 +18,4 @@ a{text-decoration: none;}
     padding: 10px;
     cursor: pointer;
 }
+.user img{width: auto; height: 32px;}

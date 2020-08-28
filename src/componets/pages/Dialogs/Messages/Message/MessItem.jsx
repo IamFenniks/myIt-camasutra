@@ -1,13 +1,14 @@
 import React from 'react';
-import s from './MessageItem.module.css';
+import s from './MessItem.module.css';
 
-const MessageItem = (props) => {
+const MessItem = (props) => {
     return (
         <div className={s.messageItem}>
             <h4>{props.messTitle}</h4>
             <p>{props.mess}</p>
         </div>
     );
+
 }
 
-export default MessageItem;
+export default MessItem;
