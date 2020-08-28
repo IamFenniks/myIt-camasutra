@@ -4,8 +4,8 @@ import s from './MessageItem.module.css';
 const MessageItem = (props) => {
     return (
         <div className={s.messageItem}>
-            <h4>{props.title}</h4>
-            <p>{props.message}</p>
+            <h4>{props.messTitle}</h4>
+            <p>{props.mess}</p>
         </div>
     );
 }
