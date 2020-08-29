@@ -9,3 +9,8 @@ h2{
 .sidebar__friends{
     color: #fff;
 }
+.sidebar__friends img{
+    width: 32px;
+    height: auto;
+    border-radius: 10em;
+}

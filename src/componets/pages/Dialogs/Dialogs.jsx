@@ -4,9 +4,6 @@ import { NavLink } from 'react-router-dom';
 import UserDialog from './UserDialog/UserDialog';
 import MessageItems from './Messages/MessageItems';
 
-debugger;
-
-
 const Dialogs = (props) => {
 
   let dialogsElements = props.state.dialogs.map(d => <UserDialog userName={d.name} id={d.id} />);
