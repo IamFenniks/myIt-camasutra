@@ -7,13 +7,13 @@ const MessageItems = (props) => {
 
     let messElement = props.state.messages.map(m => <MessItem dialogsId={m.dialogs_id} messTitle={m.title} mess={m.mess} />);
     return (
-            <Route path='/dialogs/message'
-                render={() =>
-                    <div>
-                        { messElement }
-                    </div>
-                }
-            />
+        <Route path='/dialogs/message'
+            render={() =>
+                <div>
+                    {messElement}
+                </div>
+            }
+        />
     );
 }
 
