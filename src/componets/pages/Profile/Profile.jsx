@@ -14,7 +14,7 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
 
-      <ProfileInfo />
+      <ProfileInfo addPost={props.addPost} />
 
       <MyPosts state={props.state} />
     </div>

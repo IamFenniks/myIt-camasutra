@@ -11,6 +11,7 @@ import News     from './componets/pages/News/News';
 import Settings from './componets/pages/Settings/Settings';
 import Dialogs  from './componets/pages/Dialogs/Dialogs';
 import Sidebar from './componets/Sidebar/Sidebar';
+import { addPost } from './redux/state';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
@@ -26,7 +27,8 @@ const App = (props) => {
           <Route path='/profile'
             render={ () => 
               <Profile
-                state={props.state.profilePage} 
+                state={props.state.profilePage}
+                addPost={props.addPost}
               /> 
             } 
           />

@@ -1,11 +1,11 @@
 let state = {
     profilePage: {
         posts: [
-            {id: 0, title: 'Post 1', like: 23},
-            {id: 1, title: 'Post 2', like: 432},
-            {id: 2, title: 'Post 3', like: 54},
-            {id: 3, title: 'Post 4', like: 0},
-            {id: 4, title: 'Post 5', like: 34567},
+            {id: 0, title: 'Post 1', message: 'Message 1', like: 23},
+            {id: 1, title: 'Post 2', message: 'Message 2', like: 432},
+            {id: 2, title: 'Post 3', message: 'Message 3', like: 54},
+            {id: 3, title: 'Post 4', message: 'Message 4', like: 0},
+            {id: 4, title: 'Post 5', message: 'Message 5', like: 34567},
         ]
     },
     dialogsPage: {
@@ -36,6 +36,17 @@ let state = {
             {id: 2, img: 'https://img1.freepng.ru/20180701/btv/kisspng-computer-icons-avatar-user-profile-man-avatars-5b38adb9f113b0.3674732815304411459875.jpg', fName: 'Viktor'}
         ]
     }
+}
+
+export let addPost = (postMessage) => {
+    debugger;
+    let newPost = {
+        id: 5,
+        title: 'Title 6',
+        message: postMessage,
+        like: 0
+    }
+    state.profilePage.posts.push(newPost);
 }
 
 export default state;
