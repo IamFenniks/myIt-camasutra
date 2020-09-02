@@ -6,9 +6,10 @@ const ProfileInfo = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    debugger;
     let text = newPostElement.current.value;
     props.addPost(text);
+
+    newPostElement.current.value = '';
   }
 
   return (
