@@ -8,7 +8,8 @@ let state = {
             {id: 2, title: 'Post 3', message: 'Message 3', like: 54},
             {id: 3, title: 'Post 4', message: 'Message 4', like: 0},
             {id: 4, title: 'Post 5', message: 'Message 5', like: 34567},
-        ]
+        ],
+        newPostText: 'IT-Kamasutra.com'
     },
     dialogsPage: {
         dialogs: [
@@ -40,14 +41,19 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
         title: 'Title 6',
-        message: postMessage,
+        message: state.profilePage.newPostText,
         like: 0
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
 
     rerenderEntireTree(state);
 }

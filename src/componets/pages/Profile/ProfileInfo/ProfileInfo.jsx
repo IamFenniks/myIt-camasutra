@@ -6,17 +6,19 @@ const ProfileInfo = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
+    props.addPost();
+  }
 
-    newPostElement.current.value = '';
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
   }
 
   return (
     <div className={s.describe}>
       <img src="https://cdn.pixabay.com/photo/2016/06/14/09/33/bulldog-1456110__340.png" alt="Image" />
 
-      <div><textarea ref={ newPostElement } cols="30" rows="5"></textarea></div>
+      <div><textarea ref={ newPostElement } value={props.newPostText} onChange={ onPostChange } cols="30" rows="5" /></div>
 
       <div><button onClick={ addPost }>New post</button></div>
     </div>

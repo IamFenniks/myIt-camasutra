@@ -14,9 +14,11 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
 
-      <ProfileInfo addPost={props.addPost} />
+      <ProfileInfo addPost={props.addPost} 
+        newPostText={ props.profilePage.newPostText } 
+        updateNewPostText={props.updateNewPostText} />
 
-      <MyPosts state={props.state} />
+      <MyPosts profilePage={props.profilePage} />
     </div>
   );
 }
