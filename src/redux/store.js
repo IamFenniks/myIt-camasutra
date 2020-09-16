@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDANE_NEW_MESSAGE_BODY = 'UPDANE-NEW-MESSAGE-BODY';
 
 let store = {
     _state: {
@@ -29,7 +31,8 @@ let store = {
                 { id: 2, dialogs_id: 6, title: 'Anna message 2', mess: 'Lorem 3 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
                 { id: 3, dialogs_id: 4, title: 'John message 1', mess: 'Lorem 4 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
                 { id: 4, dialogs_id: 0, title: 'Nick`s message 2', mess: 'Lorem 5 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' }
-            ]
+            ],
+            newMessageBody: ''
         },
         sideBar: {
             nav: [
@@ -63,6 +66,14 @@ let store = {
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        }else if(action.type === UPDANE_NEW_MESSAGE_BODY){
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        }else if(action.type === SEND_MESSAGE){
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messages.push({ id: 5, dialogs_id: 0, title: 'Nick`s message 3', mess: body });
+            this._callSubscriber(this._state);
         }
     },
     subscribe(observer) {
@@ -76,6 +87,12 @@ export const addPostActionCreator = () => {
 }
 export const updateNewPostTextActionCreator = (text) => {
     return { type: UPDATE_NEW_POST_TEXT, newText: text }
+}
+export const sendMessageCreator = () => {
+    return { type: SEND_MESSAGE}
+}
+export const updateNewMessageBodyCreator = (body) => {
+    return { type: UPDANE_NEW_MESSAGE_BODY, body: body }
 }
 
 

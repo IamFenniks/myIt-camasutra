@@ -5,6 +5,7 @@ import UserDialog from './UserDialog/UserDialog';
 import MessageItems from './Messages/MessageItems';
 import AddMess from './Messages/addMess/AddMess';
 
+// props - --- state={props.state.dialogsPage}   ---   dispatch={props.dispatch}
 const Dialogs = (props) => {
 
   let dialogsElements = props.state.dialogs.map(d => <UserDialog userName={d.name} id={d.id} />);
@@ -25,7 +26,7 @@ const Dialogs = (props) => {
 
         <div className={s.addMess}>
           <h1>Add message</h1>
-          <AddMess />
+          <AddMess newMessage={ props.newMessageBody } dispatch={props.dispatch} />
         </div>
       </div>
     </div>

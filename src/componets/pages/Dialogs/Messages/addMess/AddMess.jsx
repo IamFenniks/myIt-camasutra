@@ -1,12 +1,24 @@
 import React from 'react';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../../../redux/store';
 import s from './AddMess.module.css';
 
-const AddMess = () => {
+// props - --- newMessage={ props.newMessageBody } ---   dispatch={props.dispatch}
+const AddMess = (props) => {
+    let newMessageBody = props.newMessage;
+    let onNewMessageChanged = (e) => {
+        let body = e.value;
+        props.dispatch(updateNewMessageBodyCreator(body));
+    }
+
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageCreator());
+    }
+
     return(
         <form action="">
             <div><label htmlFor="text"><b>Input Your new message, please.</b></label></div>
-            <div><textarea name="" id="" cols="30" rows="5"></textarea></div>
-            <div><button>Submit</button></div>
+            <div><textarea placeholder="Enter Your message" value={ newMessageBody } onChange={ onNewMessageChanged }></textarea></div>
+            <div><button onClick={ onSendMessageClick }>Submit</button></div>
         </form>
     );
 }

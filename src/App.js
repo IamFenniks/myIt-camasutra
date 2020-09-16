@@ -14,6 +14,7 @@ import Sidebar from './componets/Sidebar/Sidebar';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
+// В props приходит   ---  state={ store.getState() }   ----    dispatch={ store.dispatch.bind(store) }
 const App = (props) => {
   return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <BrowserRouter>
@@ -36,6 +37,7 @@ const App = (props) => {
            render={ () => 
               <Dialogs 
                 state={props.state.dialogsPage}
+                dispatch={props.dispatch}
               /> 
             } 
           />
