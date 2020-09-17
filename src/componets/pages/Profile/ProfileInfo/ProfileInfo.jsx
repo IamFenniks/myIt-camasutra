@@ -1,6 +1,6 @@
 import React from 'react';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profileReduser';
 import s from './ProfileInfo.module.css';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/store';
 
 const ProfileInfo = (props) => {
   let newPostElement = React.createRef();

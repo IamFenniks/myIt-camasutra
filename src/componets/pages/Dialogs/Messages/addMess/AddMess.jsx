@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../../../redux/store';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../../../redux/dialogsReduser copy';
 import s from './AddMess.module.css';
 
 // props - --- newMessage={ props.newMessageBody } ---   dispatch={props.dispatch}
