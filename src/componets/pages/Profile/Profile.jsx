@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
-import Post from './MyPosts/Post/Post';
+import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
 
 const Profile = (props) => {
   return (
@@ -14,7 +13,7 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
 
-      <ProfileInfo 
+      <ProfileInfoContainer 
         newPostText={ props.profilePage.newPostText } 
         dispatch={props.dispatch} />
 
