@@ -13,7 +13,7 @@ const ProfileInfoContainer = (props) => {
   }
 
   return (
-    <ProfileInfo updateNewPostTextActionCreator={ onPostChange } addPost={ addPost } />
+    <ProfileInfo updateNewPostTextActionCreator={ onPostChange } addPost={ addPost } newPostText={ props.newPostText } />
   );
 }
 

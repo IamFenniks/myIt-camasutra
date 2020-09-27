@@ -1,9 +1,9 @@
 import React from 'react';
-//import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profileReduser';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profileReduser';
 import s from './ProfileInfo.module.css';
 
 const ProfileInfo = (props) => {
-
+debugger;
   let newPostElement = React.createRef();
   let onPostChange = () => {
     let text = newPostElement.current.value;
