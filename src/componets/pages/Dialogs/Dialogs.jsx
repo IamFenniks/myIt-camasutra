@@ -7,9 +7,9 @@ import AddMess from './Messages/addMess/AddMess';
 
 // props - --- state={props.state.dialogsPage}   ---   dispatch={props.dispatch}
 const Dialogs = (props) => {
-
-  let dialogsElements = props.state.dialogs.map(d => <UserDialog userName={d.name} id={d.id} />);
-  let messageElements = <MessageItems state={props.state} />;
+  let state =  props.store.getState();
+  let dialogsElements = state.dialogsPage.dialogs.map(d => <UserDialog userName={d.name} id={d.id} />);
+  let messageElements = <MessageItems state={state} />;
 
   return (
     <div className={s.dialogs}>

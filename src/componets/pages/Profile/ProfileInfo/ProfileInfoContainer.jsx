@@ -5,11 +5,11 @@ import ProfileInfo from './ProfileInfo';
 const ProfileInfoContainer = (props) => {
   let onPostChange = (text) => {
     let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action);
+    props.store.dispatch(action);
   }
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.store.dispatch(addPostActionCreator());
   }
 
   return (

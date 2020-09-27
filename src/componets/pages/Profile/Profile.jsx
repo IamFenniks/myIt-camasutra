@@ -4,6 +4,9 @@ import MyPosts from './MyPosts/MyPosts';
 import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
 
 const Profile = (props) => {
+
+  let state =  props.store.getState();
+
   return (
     <div className={s.profile}>
       <div className={s.banner}>
@@ -14,10 +17,11 @@ const Profile = (props) => {
       <hr/>
 
       <ProfileInfoContainer 
-        newPostText={ props.profilePage.newPostText } 
+        store={props.store}
+        newPostText={ state.profilePage.newPostText } 
         dispatch={props.dispatch} />
 
-      <MyPosts profilePage={props.profilePage} />
+      <MyPosts profilePage={state.profilePage} />
     </div>
   );
 }

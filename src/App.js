@@ -21,14 +21,14 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
 
-        <Sidebar state={props.state.sideBar} />
+        <Sidebar state={props.store.getState() } />
 
         <article className="app-wrapper__article article">
           <Route path='/profile'
             render={ () => 
               <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
+                dispatch={ props.store.dispatch.bind(props.store) }
+                store={props.store}
               /> 
             } 
           />
@@ -36,8 +36,8 @@ const App = (props) => {
           <Route path='/dialogs'
            render={ () => 
               <Dialogs 
-                state={props.state.dialogsPage}
-                dispatch={props.dispatch}
+                dispatch={props.store.dispatch.bind(props.store)}
+                store={props.store}
               /> 
             } 
           />

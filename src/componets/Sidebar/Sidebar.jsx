@@ -4,7 +4,8 @@ import Navbar from './Navbar/Navbar';
 import Friends from './Friends/Friends';
 
 const Sidebar = (props) => {
-    let friends = props.state.friends.map(f => <Friends img={f.img} name={f.fName} />);
+    debugger;
+    let friends = props.state.sideBar.friends.map(f => <Friends img={f.img} name={f.fName} />);
 
     return (
         <section className="sidebar">
