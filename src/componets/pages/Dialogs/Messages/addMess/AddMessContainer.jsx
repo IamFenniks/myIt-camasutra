@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../../../redux/dialogsReduser';
 import AddMess from './AddMess';
 
-// props - --- newMessage={ props.newMessageBody } ---   dispatch={props.dispatch}
-
 let mapStateToProps = (state) => {
     return {
         newMessage: state.newMessage
@@ -13,8 +11,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return{
-        updateNewMessageBodyCreator: (body) => {
-            dispatch(updateNewMessageBodyCreator(body));},
+        updateNewMessageBodyCreator: (body) => {dispatch(updateNewMessageBodyCreator(body));},
         sendMessageCreator: () => {dispatch(sendMessageCreator());}
     }
 }

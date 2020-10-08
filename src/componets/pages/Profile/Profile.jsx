@@ -3,10 +3,7 @@ import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
 
-const Profile = (props) => {
-
-  let state =  props.store.getState();
-
+const Profile = () => {
   return (
     <div className={s.profile}>
       <div className={s.banner}>
@@ -16,12 +13,9 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
 
-      <ProfileInfoContainer 
-        store={props.store}
-        newPostText={ state.profilePage.newPostText } 
-        dispatch={props.dispatch} />
+      <ProfileInfoContainer />
 
-      <MyPosts profilePage={state.profilePage} />
+      <MyPosts />
     </div>
   );
 }

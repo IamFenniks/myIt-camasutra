@@ -1,16 +1,14 @@
 import React from 'react';
 import s from './MessageItems.module.css';
 import { Route, BrowserRouter } from 'react-router-dom';
-import MessItem from './Message/MessItem';
+import MessItemContainer from './Message/MessItemContainer';
 
-const MessageItems = (props) => {
-
-    let messElement = props.state.dialogsPage.messages.map(m => <MessItem dialogsId={m.dialogs_id} messTitle={m.title} mess={m.mess} />);
-    return (
+const MessageItems = () => {
+  return (
         <Route path='/dialogs/message'
             render={() =>
                 <div>
-                    {messElement}
+                   <MessItemContainer />
                 </div>
             }
         />

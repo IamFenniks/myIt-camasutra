@@ -1,12 +1,9 @@
 import React from 'react';
 import s from './Sidebar.module.css';
 import Navbar from './Navbar/Navbar';
-import Friends from './Friends/Friends';
+import FriendsContainer from './Friends/FriendsContainer';
 
-const Sidebar = (props) => {
-    debugger;
-    let friends = props.state.sideBar.friends.map(f => <Friends img={f.img} name={f.fName} />);
-
+const Sidebar = () => {
     return (
         <section className="sidebar">
             <Navbar />
@@ -16,7 +13,7 @@ const Sidebar = (props) => {
                 <h2>Friends</h2>
 
                 <div className={s.sidebar__friends}>
-                    {friends}
+                    <FriendsContainer />
                 </div>
             </div>
         </section>
