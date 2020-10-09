@@ -5,7 +5,7 @@ import ProfileInfo from './ProfileInfo';
 
 let mapStateToProps =(state) => {
   return {
-    newPostText: state.newPostText
+    newPostText: state.profilePage.newPostText
   }
 }
 

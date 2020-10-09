@@ -22,7 +22,7 @@ const profileReduser = (state = initialState, action) => {
                 like: 0
             }
             let stateCopy = { ...state };
-            stateCopy.posts = { ...state.posts };
+            stateCopy.posts = [ ...state.posts ];
             stateCopy.posts.push(newPost);
             stateCopy.newPostText = '';
             return stateCopy;

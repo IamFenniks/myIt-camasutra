@@ -35,7 +35,7 @@ const dialogsReduser = (state = initialState, action) => {
             let body = stateCopy.newMessageBody;
             stateCopy.newMessageBody = '';
 
-            stateCopy.messages = { ...state.messages};
+            stateCopy.messages = [ ...state.messages];
             stateCopy.messages.push({ id: 5, dialogs_id: 0, title: 'Nick`s message 3', mess: body });
             return stateCopy;
         }

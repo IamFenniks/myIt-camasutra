@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts';
 import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
+import PostsContainer from './MyPosts/PostsContainer';
 
 const Profile = () => {
   return (
@@ -15,7 +15,7 @@ const Profile = () => {
 
       <ProfileInfoContainer />
 
-      <MyPosts />
+      <PostsContainer />
     </div>
   );
 }

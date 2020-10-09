@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import UserDialog from './UserDialog/UserDialog';
-import MessageItems from './Messages/MessageItems';
 import AddMessContainer from './Messages/addMess/AddMessContainer';
+import MessItemContainer from './Messages/Message/MessItemContainer';
+import UserDialogContainer from './UserDialog/UserDialogContainer';
 
 // props - --- state={props.state.dialogsPage}   ---   dispatch={props.dispatch}
 const Dialogs = () => {
@@ -10,13 +10,13 @@ const Dialogs = () => {
     <div className={s.dialogs}>
       <div className={s.dialogs__users}>
         <h1>Dialogs</h1>
-       <MessageItems />
+        <UserDialogContainer />
       </div>
 
       <div className={s.dialogs__messages}>
         <div className={s.mess}>
           <h1>Messages</h1>
-          <UserDialog />
+          <MessItemContainer />
         </div>
 
         <div className={s.addMess}>

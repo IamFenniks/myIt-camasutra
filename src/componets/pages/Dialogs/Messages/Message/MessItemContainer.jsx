@@ -1,15 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MessItem from './MessItem';
-import s from './MessItem.module.css';
+import MessageItems from '../MessageItems';
 
 let mapStateToProps = (state) => {
     return {
-        messTitle: state.messTitle,
-        state: state.mess
+        messages: state.dialogsPage.messages
     }
 }
 
-const MessItemContainer = connect(mapStateToProps)(MessItem);
+const MessItemContainer = connect(mapStateToProps)(MessageItems);
 
 export default MessItemContainer;
