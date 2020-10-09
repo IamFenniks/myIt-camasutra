@@ -4,8 +4,8 @@ import Friends from './Friends';
 
 let mapStateToProps = (state) => {
     return {
-        img: state.img,
-        name: state.name
+        img: state.sideBar.friends.img,
+        name: state.sideBar.friends.name
     }
 }
 

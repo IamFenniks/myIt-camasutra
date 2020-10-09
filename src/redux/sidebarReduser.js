@@ -11,9 +11,10 @@ let initialState = {
 };
 
 const sidebarReduser = (state = initialState, action) => {
+    let stateCopy = { ...state};
+    stateCopy.friends = { ...state.friends};
 
-
-    return state;
+    return stateCopy;
 }
 
 

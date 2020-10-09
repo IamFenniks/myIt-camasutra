@@ -22,15 +22,24 @@ let initialState = {
 };
 
 const dialogsReduser = (state = initialState, action) => {
+   
     switch (action.type) {
-        case UPDANE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            return state;
-        case SEND_MESSAGE:
-            let body = state.newMessageBody;
-            state.newMessageBody = '';
-            state.messages.push({ id: 5, dialogs_id: 0, title: 'Nick`s message 3', mess: body });
-            return state;
+        case UPDANE_NEW_MESSAGE_BODY: {
+            let stateCopy = { ...state };
+            stateCopy.newMessageBody = action.body;
+            return stateCopy;
+        }
+            
+        case SEND_MESSAGE: {
+            let stateCopy = { ...state };
+            let body = stateCopy.newMessageBody;
+            stateCopy.newMessageBody = '';
+
+            stateCopy.messages = { ...state.messages};
+            stateCopy.messages.push({ id: 5, dialogs_id: 0, title: 'Nick`s message 3', mess: body });
+            return stateCopy;
+        }
+            
         default: return state;
     }
 
