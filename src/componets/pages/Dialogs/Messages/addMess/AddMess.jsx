@@ -4,7 +4,6 @@ import s from './AddMess.module.css';
 
 // props - --- newMessage={ props.newMessageBody } ---   dispatch={props.dispatch}
 const AddMess = (props) => {
-    debugger;
     let newMessageBody = props.newMessage;
     let onNewMessageChanged = (e) => {
         let body = e.value;

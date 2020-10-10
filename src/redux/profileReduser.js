@@ -13,26 +13,27 @@ let initialState = {
 };
 
 const profileReduser = (state = initialState, action) => {
+    
+    let stateCopy;
     switch (action.type) {
-        case ADD_POST: {
+        case ADD_POST:
             let newPost = {
                 id: 5,
                 title: 'Title 6',
                 message: state.newPostText,
                 like: 0
             }
-            let stateCopy = { ...state };
-            stateCopy.posts = [ ...state.posts ];
-            stateCopy.posts.push(newPost);
-            stateCopy.newPostText = '';
+            stateCopy = { ...state,
+                posts: [ ...state.posts, newPost],
+                newPostText: ''
+            };
             return stateCopy;
-        }
             
-        case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = { ...state };
-            stateCopy.newPostText = action.newText;
+        case UPDATE_NEW_POST_TEXT:
+            stateCopy = { ...state,
+                newPostText: action.newText
+            };
             return stateCopy;
-        }
             
         default: return state;
     }
