@@ -9,6 +9,7 @@ import News     from './componets/pages/News/News';
 import Settings from './componets/pages/Settings/Settings';
 import Dialogs  from './componets/pages/Dialogs/Dialogs';
 import Sidebar from './componets/Sidebar/Sidebar';
+import Users from './componets/pages/Users/Users';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
@@ -26,6 +27,7 @@ const App = (props) => {
           <Route path='/dialogs' render={ () => <Dialogs /> }  />
           <Route path='/news' component={ () => <News /> } />
           <Route path='/music' component={ Music } />
+          <Route path='/users' render={ () => <Users /> } />
           <Route path='/settings' component={ Settings } />
         </article>
 
