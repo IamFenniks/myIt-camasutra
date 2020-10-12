@@ -1,0 +1,30 @@
+.users h1{
+    text-align: center;
+}
+
+.userGrid{
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    gap: 5px;
+
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.userGrid_left img{
+    width: 36px;
+    height: auto;
+}
+.userGrid_right{
+    display: grid;
+    grid-template-columns: auto  auto;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    align-content: space-between;
+
+    width: 75%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
