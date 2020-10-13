@@ -10,3 +10,8 @@
     color: gold;
     text-decoration: underline;
 }
+
+.item:hover{
+    color: aqua;
+    transition: all .5s ease;
+}

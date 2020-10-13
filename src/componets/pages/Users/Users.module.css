@@ -10,10 +10,13 @@
     height: auto;
     margin-bottom: 5px;
 }
-
+.userGrid_left{
+    text-align: center;
+}
 .userGrid_left img{
     width: 36px;
     height: auto;
+    justify-content: center;
 }
 .userGrid_right{
     display: grid;
@@ -28,3 +31,13 @@
     padding: 5px;
 }
 
+.follow{
+    border-radius: 5px;
+}
+
+.userGrid:hover .userGrid_right, .userGrid:hover .follow{
+    background-color: aqua;
+    color: aliceblue;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    transition: all .5s ease;
+}
