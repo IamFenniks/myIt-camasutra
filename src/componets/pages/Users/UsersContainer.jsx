@@ -1,7 +1,7 @@
 import React from 'react';
 import * as axios from 'axios';
 import { connect } from 'react-redux';
-import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, toggleIsFetchedAC, unfollowAC } from '../../../redux/usersReduser';
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetched, unfollow } from '../../../redux/usersReduser';
 import Users from './Users';
 
 class UsersContainer extends React.Component {
@@ -54,28 +54,53 @@ let mapStateToProps = (state) => {
         isFetched: state.usersPage.isFetched
     }
 }
+                    //     I      //
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {
+//             dispatch(followAC(userId))
+//         },
+//         unfollow: (userId) => {
+//             dispatch(unfollowAC(userId))
+//         },
+//         setUsers: (users) => {
+//             dispatch(setUsersAC(users))
+//         },
+//         setTotalUsersCount: (totalCount) => {
+//             dispatch(setTotalUsersCountAC(totalCount))
+//         },
+//         setCurrentPage: (pageNumber) => {
+//             dispatch(setCurrentPageAC(pageNumber))
+//         },
+//         toggleIsFetched: (isFetched) => {
+//             dispatch(toggleIsFetchedAC(isFetched))
+//         }
+//     }
+// }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        toggleIsFetched: (isFetched) => {
-            dispatch(toggleIsFetchedAC(isFetched))
-        }
-    }
-}
+                   //    II    //
+// export default connect(
+//         mapStateToProps, 
+//         {
+    //         follow: followAC,
+    //         unfollow: unfollowAC,
+    //         setUsers: setUsersAC,
+    //         setTotalUsersCount: setTotalUsersCountAC,
+    //         setCurrentPage: setCurrentPageAC,
+    //         toggleIsFetched: toggleIsFetchedAC
+    //     }
+//     )(UsersContainer);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+                   //    III    //
+//      Меняем в userReduser названия СА-ов
+// import { followAC -> follow, setCurrentPageAC -> setCurrentPageAC,... } from '../../../redux/usersReduser';
+
+// export default connect(
+//         mapStateToProps, 
+//         { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, toggleIsFetched }
+//     )(UsersContainer);               
+
+export default connect(
+        mapStateToProps, 
+        { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, toggleIsFetched }
+    )(UsersContainer);
