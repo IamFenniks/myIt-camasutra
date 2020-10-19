@@ -1,16 +1,3 @@
 h2{
     color: white;
 }
-.sidebar__friends{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-}
-.sidebar__friends{
-    color: #fff;
-}
-.sidebar__friends img{
-    width: 32px;
-    height: auto;
-    border-radius: 10em;
-}

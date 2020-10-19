@@ -8,11 +8,11 @@ const Sidebar = () => {
         <section className="sidebar">
             <Navbar />
 
-            <div className={s.friends}>
+            <div>
                 <br/>
                 <h2>Friends</h2>
 
-                <div className={s.sidebar__friends}>
+                <div>
                     <FriendsContainer />
                 </div>
             </div>

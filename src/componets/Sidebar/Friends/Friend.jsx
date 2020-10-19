@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './Friends.module.css';
+import s from './Friend.module.css';
 
 const Friend = (props) => {
     return (
-        <div>
+        <div className={s.item}>
             <img src={props.img} alt="friend_sAvatar" />
 
             {props.name}
