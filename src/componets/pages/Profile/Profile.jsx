@@ -1,9 +1,9 @@
 import React from 'react';
+import MyPosts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
-import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
-import PostsContainer from './MyPosts/PostsContainer';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className={s.profile}>
       <div className={s.banner}>
@@ -12,10 +12,10 @@ const Profile = () => {
 
       <h1>Profile</h1>
       <hr/>
+      
+      <ProfileInfo newPostText={props.newPostText} updateNewPostText={ props.updateNewPostText } addPost={ props.addPost } />
 
-      <ProfileInfoContainer />
-
-      <PostsContainer />
+      <MyPosts posts={ props.posts } />
     </div>
   );
 }
