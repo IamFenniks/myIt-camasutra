@@ -33,7 +33,7 @@ const Users = (props) => {
                     : props.users.map(u =>
                         <div className={s.userGrid} key={u.id}>
                             <div className={s.userGrid_left}>
-                                <NavLink to={ /profile/ + u.id }>
+                                <NavLink to="/profile">
                                     <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar" />
                                 </NavLink>
                                    

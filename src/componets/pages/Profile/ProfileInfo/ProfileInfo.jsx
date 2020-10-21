@@ -1,24 +1,36 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Preloader from '../../../common/Preloader';
 import s from './ProfileInfo.module.css';
 
 const ProfileInfo = (props) => {
-  let newPostElement = React.createRef();
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
-  }
-
-  let onAddPost = () => {
-    props.addPost();
-  }
-
+if(!props.profile) {
+  return <Preloader />
+} 
+  
   return (
     <div className={s.describe}>
-      <img src="https://cdn.pixabay.com/photo/2016/06/14/09/33/bulldog-1456110__340.png" alt="Image" />
-
-      <div><textarea ref={ newPostElement } value={props.newPostText} onChange={ onPostChange } cols="30" rows="5" /></div>
-
-      <div><button onClick={ onAddPost }>New post</button></div>
+      <div className={s.aboutMe}>
+        <div><img src={ props.profile.photos.small } alt="Image" /></div>
+        <div>
+              <h2>{ props.profile.fullName }</h2>
+              <h4> About me: </h4>
+              <p>{ props.profile.aboutMe }</p>
+              <h4> Looking for a job: </h4>
+              <p> { props.profile.lookingForAJobDescription } </p>
+              <h4>Contacts:</h4>
+              <ul>
+                <li><NavLink to="">website</NavLink></li>
+                <li><NavLink to="">vk</NavLink></li>
+                <li><NavLink to="">twitter</NavLink></li>
+                <li><NavLink to="">instagram</NavLink></li>
+                <li><NavLink to="">youtube</NavLink></li>
+                <li><NavLink to="">github</NavLink></li>
+                <li><NavLink to="">facebook</NavLink></li>
+                <li><NavLink to="">mainLink</NavLink></li>
+              </ul>
+        </div>
+      </div>
     </div>
   );
 }

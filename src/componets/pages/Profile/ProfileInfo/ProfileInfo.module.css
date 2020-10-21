@@ -4,3 +4,12 @@
 .describe img{
     width: 10%;
 }
+
+.aboutMe{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.aboutMe h2{
+    color: black;
+}

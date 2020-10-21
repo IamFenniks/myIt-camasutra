@@ -70,8 +70,8 @@ export const unfollow = (userId) => {
 export const setUsers = (users) => {
     return { type: SET_USERS, users }
 }
-export const setTotalUsersCount = (totalCount) => ({  type: SET_TOTAL_USERS_COUNT, count: totalCount })
-export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
-export const toggleIsFetched = (isFetched) => ({ type: TOGGLE_IS_FETCHED, isFetched })
+export const setTotalUsersCount = (totalCount) => ({  type: SET_TOTAL_USERS_COUNT, count: totalCount });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const toggleIsFetched = (isFetched) => ({ type: TOGGLE_IS_FETCHED, isFetched });
 
 export default usersReduser;

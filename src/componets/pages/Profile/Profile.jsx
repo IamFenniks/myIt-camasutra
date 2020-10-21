@@ -13,9 +13,16 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
       
-      <ProfileInfo newPostText={props.newPostText} updateNewPostText={ props.updateNewPostText } addPost={ props.addPost } />
+      <ProfileInfo 
+        profile={ props.profile } 
+      />
 
-      <MyPosts posts={ props.posts } />
+      <MyPosts 
+        newPostText={props.newPostText} 
+        updateNewPostText={ props.updateNewPostText } 
+        addPost={ props.addPost }
+        posts={ props.posts } 
+      />
     </div>
   );
 }
