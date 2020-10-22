@@ -23,7 +23,7 @@ const App = (props) => {
         <Sidebar />
 
         <article className="app-wrapper__article article">
-          <Route path='/profile' render={ () => <ProfileContainer /> } />
+          <Route path='/profile/:userId?' render={ () => <ProfileContainer /> } />
           <Route path='/dialogs' render={ () => <Dialogs /> }  />
           <Route path='/news' component={ () => <News /> } />
           <Route path='/music' component={ Music } />

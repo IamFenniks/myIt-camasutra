@@ -9,7 +9,7 @@ const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
     let pages = [];
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 15; i++) {
         pages.push(i);
     }
 
@@ -33,7 +33,7 @@ const Users = (props) => {
                     : props.users.map(u =>
                         <div className={s.userGrid} key={u.id}>
                             <div className={s.userGrid_left}>
-                                <NavLink to="/profile">
+                                <NavLink to={ '/profile/' + u.id }>
                                     <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar" />
                                 </NavLink>
                                    

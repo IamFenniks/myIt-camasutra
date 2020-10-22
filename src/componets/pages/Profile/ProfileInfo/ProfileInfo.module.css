@@ -2,7 +2,7 @@
     padding: 20px;
 }
 .describe img{
-    width: 10%;
+    width: auto;
 }
 
 .aboutMe{
@@ -12,4 +12,10 @@
 
 .aboutMe h2{
     color: black;
+}
+
+ul li {
+    float: left;
+    margin-right: 12px;
+    list-style-type: none;
 }

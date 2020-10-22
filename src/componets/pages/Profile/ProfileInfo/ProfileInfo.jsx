@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Preloader from '../../../common/Preloader';
 import s from './ProfileInfo.module.css';
+import userPhoto from '../../../../../src/assets/img/woman1.png';
 
 const ProfileInfo = (props) => {
 if(!props.profile) {
@@ -11,7 +12,7 @@ if(!props.profile) {
   return (
     <div className={s.describe}>
       <div className={s.aboutMe}>
-        <div><img src={ props.profile.photos.small } alt="Image" /></div>
+        <div><img src={ props.profile.photos.small != null ? props.profile.photos.small : userPhoto } alt="Image" /></div>
         <div>
               <h2>{ props.profile.fullName }</h2>
               <h4> About me: </h4>
