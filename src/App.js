@@ -10,6 +10,7 @@ import Dialogs  from './componets/pages/Dialogs/Dialogs';
 import Sidebar from './componets/Sidebar/Sidebar';
 import UsersContainer from './componets/pages/Users/UsersContainer';
 import ProfileContainer from './componets/pages/Profile/ProfileContainer';
+import HeaderContainer from './componets/Header/HeaderContainer';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
@@ -18,7 +19,7 @@ const App = (props) => {
   return (// -- должен быть только один тег-родитель-- Начало языка JSX>
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
 
         <Sidebar />
 

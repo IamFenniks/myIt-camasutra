@@ -2,8 +2,17 @@
     grid-area: header;
     background-color: lightgray;
     margin-bottom: 12px;
+
+    display: grid;
+    grid-template-columns: 1fr 9fr 2fr;
+    justify-content: space-between;
   }
 .header img{
   height: 100%;
+}
+
+.header .loginBlock{
+  align-self: center;
+  align-content: end;
 }
   

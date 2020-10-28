@@ -13,7 +13,7 @@ const MyPosts = (props) => {
     props.addPost();
   }
   
-  let profilePosts = props.posts.map(p => <Post title={p.title} message={p.message} like={p.like} />);
+  let profilePosts = props.posts.map(p => <Post title={p.title} message={p.message} key={p.id} like={p.like} />);
   return (
     <div>
       <div>
