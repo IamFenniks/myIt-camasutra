@@ -3,15 +3,13 @@ import * as axios from 'axios';
 import { connect } from 'react-redux';
 import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetched, unfollow } from '../../../redux/usersReduser';
 import Users from './Users';
+import { getUsers } from '../../../api/api';
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetched(true);  
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, { 
-            withCredentials: true 
-        })
-            .then(response => {
+            getUsers().then(response => {
                 this.props.toggleIsFetched(false); 
                 this.props.setUsers(response.data.items);
                 this.props.setTotalUsersCount(response.data.totalCount);
