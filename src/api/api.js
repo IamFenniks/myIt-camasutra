@@ -13,6 +13,13 @@ export const usersAPI = {
       .then(response => {
         return response.data;
       });
+  },
+  getUser(userID) {
+    return instance
+      .get(`profile/` + userID)
+      .then(response => {
+        return response.data;
+      });
   }
 }
 
@@ -20,6 +27,13 @@ export const followAPI = {
   unFollow(userID) {
     return instance
       .delete(`follow/${userID}`)
+      .then(response => {
+        return response.data;
+      });
+  },
+  follow(userID) {
+    return instance
+      .post(`follow/${userID}`, {}, instance)
       .then(response => {
         return response.data;
       });

@@ -52,12 +52,9 @@ const Users = (props) => {
                                     }}>Unfollow</button>
                                     : <button className={s.follow} onClick={() => {
 
-                                        Axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, { 
-                                            withCredentials: true,
-                                            headers: { 'API-KEY': 'e21a2f29-5f8c-4034-a17e-3a5cd82904dc' }
-                                        })
-                                            .then(response => {
-                                                if(response.data.resultCode == 0){
+                                        followAPI.follow(u.id)
+                                            .then(data   => {
+                                                if(data.resultCode == 0){
                                                     props.follow(u.id)
                                                 }
                                             }
