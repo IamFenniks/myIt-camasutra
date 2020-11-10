@@ -15,3 +15,13 @@ export const usersAPI = {
       });
   }
 }
+
+export const followAPI = {
+  unFollow(userID) {
+    return instance
+      .delete(`follow/${userID}`)
+      .then(response => {
+        return response.data;
+      });
+  }
+}

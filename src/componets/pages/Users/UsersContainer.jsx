@@ -8,13 +8,13 @@ import { usersAPI } from '../../../api/api';
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.toggleIsFetched(true);  
-            usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-                this.props.toggleIsFetched(false); 
-                this.props.setUsers(data.items);
-                this.props.setTotalUsersCount(data.totalCount);
-                 
-            }
+        this.props.toggleIsFetched(true);
+        usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+            this.props.toggleIsFetched(false);
+            this.props.setUsers(data.items);
+            this.props.setTotalUsersCount(data.totalCount);
+
+        }
         );
     }
 
@@ -22,27 +22,26 @@ class UsersContainer extends React.Component {
         this.props.setCurrentPage(pageNumber);
 
         this.props.toggleIsFetched(true);
-          
-        usersAPI.getUsers()
-            .then(data => { 
-                this.props.toggleIsFetched(false);
-                this.props.setUsers(data.items);
 
-            }
+        usersAPI.getUsers()
+            .then(data => {
+                    this.props.toggleIsFetched(false);
+                    this.props.setUsers(data.items);
+                }
             );
     }
 
     render() {
         return <Users
-                totalUsersCount={this.props.totalUsersCount}
-                pageSize={this.props.pageSize}
-                currentPage={this.props.currentPage}
-                onPageChanged={this.onPageChanged}
-                users={this.props.users}
-                follow={this.props.follow}
-                unfollow={this.props.unfollow}
-                isFetched={this.props.isFetched}
-            />
+            totalUsersCount={this.props.totalUsersCount}
+            pageSize={this.props.pageSize}
+            currentPage={this.props.currentPage}
+            onPageChanged={this.onPageChanged}
+            users={this.props.users}
+            follow={this.props.follow}
+            unfollow={this.props.unfollow}
+            isFetched={this.props.isFetched}
+        />
     }
 }
 
@@ -55,7 +54,7 @@ let mapStateToProps = (state) => {
         isFetched: state.usersPage.isFetched
     }
 }
-                    //     I      //
+//     I      //
 // let mapDispatchToProps = (dispatch) => {
 //     return {
 //         follow: (userId) => {
@@ -79,20 +78,20 @@ let mapStateToProps = (state) => {
 //     }
 // }
 
-                   //    II    //
+//    II    //
 // export default connect(
 //         mapStateToProps, 
 //         {
-    //         follow: followAC,
-    //         unfollow: unfollowAC,
-    //         setUsers: setUsersAC,
-    //         setTotalUsersCount: setTotalUsersCountAC,
-    //         setCurrentPage: setCurrentPageAC,
-    //         toggleIsFetched: toggleIsFetchedAC
-    //     }
+//         follow: followAC,
+//         unfollow: unfollowAC,
+//         setUsers: setUsersAC,
+//         setTotalUsersCount: setTotalUsersCountAC,
+//         setCurrentPage: setCurrentPageAC,
+//         toggleIsFetched: toggleIsFetchedAC
+//     }
 //     )(UsersContainer);
 
-                   //    III    //
+//    III    //
 //      Меняем в userReduser названия СА-ов
 // import { followAC -> follow, setCurrentPageAC -> setCurrentPageAC,... } from '../../../redux/usersReduser';
 
@@ -102,6 +101,6 @@ let mapStateToProps = (state) => {
 //     )(UsersContainer);               
 
 export default connect(
-        mapStateToProps, 
-        { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, toggleIsFetched }
-    )(UsersContainer);
+    mapStateToProps,
+    { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, toggleIsFetched }
+)(UsersContainer);
