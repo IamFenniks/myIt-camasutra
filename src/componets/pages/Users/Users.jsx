@@ -3,7 +3,6 @@ import s from './Users.module.css';
 import userPhoto from '../../../../src/assets/img/woman1.png';
 import Preloader from '../../common/Preloader';
 import { NavLink } from 'react-router-dom';
-import Axios from 'axios';
 import { followAPI } from '../../../api/api';
 
 const Users = (props) => {
