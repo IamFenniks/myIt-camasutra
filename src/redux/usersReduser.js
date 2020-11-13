@@ -1,4 +1,4 @@
-import { usersAPI } from "../api/api";
+import { usersAPI, followAPI } from "../api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -73,10 +73,10 @@ const usersReduser = (state = initialState, action) => {
 
               /* --------------------- ACTIONs` Creators start --------------------- */
 debugger;
-export const follow = (userId) => {
+export const followSuccess = (userId) => {
     return { type: FOLLOW, userId };
 }
-export const unfollow = (userId) => {
+export const unfollowSuccess = (userId) => {
     return { type: UNFOLLOW, userId }
 }
 export const setUsers = (users) => {
@@ -103,6 +103,34 @@ export const getUsers = (currentPage, pageSize) => {
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
         }
+        );
+    }
+}
+
+export const follow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleFollowInProgress(true, userId));
+
+        followAPI.follow(userId).then(data => {
+                    if(data.resultCode == 0){
+                        dispatch(followSuccess(userId))
+                }
+                dispatch(toggleFollowInProgress(false, userId));
+            }
+        );
+    }
+}
+
+export const unfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleFollowInProgress(true, userId));
+
+        followAPI.unFollow(userId).then(data => {
+                    if(data.resultCode == 0){
+                        dispatch(unfollowSuccess(userId))
+                }
+                dispatch(toggleFollowInProgress(false, userId));
+            }
         );
     }
 }
