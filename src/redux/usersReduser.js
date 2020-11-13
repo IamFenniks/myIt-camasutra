@@ -72,7 +72,7 @@ const usersReduser = (state = initialState, action) => {
 }
 
               /* --------------------- ACTIONs` Creators start --------------------- */
-debugger;
+
 export const followSuccess = (userId) => {
     return { type: FOLLOW, userId };
 }
@@ -93,7 +93,9 @@ export const toggleFollowInProgress = (isFetched, userId) => ({
               /* --------------------- ACTIONs` Creators end --------------------- */
 
               /* --------------------- THUNKs` Creators start --------------------- */
+              /* gerUserThunkCreator */
 export const getUsers = (currentPage, pageSize) => {
+            // Thunk
     return (dispatch) => {
         dispatch(toggleIsFetched(true));
 
@@ -107,7 +109,9 @@ export const getUsers = (currentPage, pageSize) => {
     }
 }
 
+                /* followThunkCreator */
 export const follow = (userId) => {
+            // Thunk
     return (dispatch) => {
         dispatch(toggleFollowInProgress(true, userId));
 
@@ -121,7 +125,9 @@ export const follow = (userId) => {
     }
 }
 
+                /* unFollowThunkCreator */
 export const unfollow = (userId) => {
+            // Thunk
     return (dispatch) => {
         dispatch(toggleFollowInProgress(true, userId));
 

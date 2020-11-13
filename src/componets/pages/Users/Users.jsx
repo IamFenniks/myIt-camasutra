@@ -20,7 +20,7 @@ const Users = (props) => {
             <div className={s.pagination}>
                 {pages.map(p =>
                     <span key={p.id} className={props.currentPage === p && s.active}
-                        onClick={() => { debugger; props.onPageChanged(p) }} >{p}</span>
+                        onClick={() => { props.onPageChanged(p) }} >{p}</span>
                 )}
             </div>
             <hr />
