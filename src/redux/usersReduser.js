@@ -71,6 +71,8 @@ const usersReduser = (state = initialState, action) => {
     return state;
 }
 
+              /* --------------------- ACTIONs` Creators start --------------------- */
+debugger;
 export const follow = (userId) => {
     return { type: FOLLOW, userId };
 }
@@ -88,7 +90,9 @@ export const toggleFollowInProgress = (isFetched, userId) => ({
     isFetched,
     userId
 });
+              /* --------------------- ACTIONs` Creators end --------------------- */
 
+              /* --------------------- THUNKs` Creators start --------------------- */
 export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetched(true));
@@ -101,5 +105,7 @@ export const getUsers = (currentPage, pageSize) => {
         );
     }
 }
+              /* --------------------- THUNKs` Creators end --------------------- */
+
 
 export default usersReduser;

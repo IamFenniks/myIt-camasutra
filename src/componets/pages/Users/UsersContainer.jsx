@@ -4,12 +4,14 @@ import { follow, setCurrentPage, unfollow, toggleFollowInProgress, getUsers } fr
 import Users from './Users';
 
 class UsersContainer extends React.Component {
-
+    
     componentDidMount() {
+        // debugger;
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
         this.props.getUsers(pageNumber, this.props.pageSize);
     }
 
@@ -20,6 +22,7 @@ class UsersContainer extends React.Component {
             currentPage={this.props.currentPage}
             onPageChanged={this.onPageChanged}
             users={this.props.users}
+            setCurrentPage={this.props.setCurrentPage}
             follow={this.props.follow}
             unfollow={this.props.unfollow}
             isFetched={this.props.isFetched}

@@ -13,7 +13,6 @@ const Users = (props) => {
     for (let i = 1; i <= 15; i++) {
         pages.push(i);
     }
-
     return (
         <div className={s.users}>
             <h1>Users</h1>
@@ -22,8 +21,8 @@ const Users = (props) => {
             <div className={s.pagination}>
                 {pages.map(p =>
                     <span key={p.id} className={props.currentPage === p && s.active}
-                        onClick={() => { props.onPageChanged(p) }} >{p}</span>
-
+                       
+                        onClick={() => { debugger; props.onPageChanged(p) }} >{p}</span>
                 )}
             </div>
             <hr />
