@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import Preloader from '../../../common/Preloader';
 import s from './ProfileInfo.module.css';
 import userPhoto from '../../../../../src/assets/img/woman1.png';
 
 const ProfileInfo = (props) => {
   //debugger;
+  if (!props.isAuth) return <Redirect to={ '/login' } />;
 if(!props.profile) {
   return <Preloader />
 } 

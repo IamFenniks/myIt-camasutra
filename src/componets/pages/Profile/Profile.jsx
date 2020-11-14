@@ -16,6 +16,7 @@ const Profile = (props) => {
       
       <ProfileInfo 
         profile={ props.profile } 
+        isAuth={ props.isAuth }
       />
 
       <MyPosts 

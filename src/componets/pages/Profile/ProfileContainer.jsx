@@ -25,7 +25,8 @@ let mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
     newPostText: state.profilePage.newPostText,
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    isAuth: state.auth.isAuth
   }
 }
 //  ------ Альтернативный вариант возврата объекта ------
@@ -37,6 +38,7 @@ let mapStateToProps = (state) => {
 //   }
 // )
 
+// withRouter возвращает новую комп. с id user - url строку
 let withRouterUrl = withRouter(ProfileContainer);
 
 export default connect(mapStateToProps,
