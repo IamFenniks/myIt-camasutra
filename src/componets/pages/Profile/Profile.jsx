@@ -1,7 +1,7 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import AuthRedirectComponent from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
   //debugger;
@@ -14,7 +14,7 @@ const Profile = (props) => {
       <h1>Profile</h1>
       <hr/>
       
-      <ProfileInfo 
+      <AuthRedirectComponent 
         profile={ props.profile } 
         isAuth={ props.isAuth }
       />

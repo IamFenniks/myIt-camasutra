@@ -3,6 +3,8 @@ import { addPost, updateNewPostText, setUserProfile, getUser } from '../../../re
 import { connect } from 'react-redux';
 import Profile from './Profile';
 import { withRouter } from 'react-router-dom';
+import { withAuthRedirect } from '../../../hocs/withAuthRedirect';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
   
@@ -31,16 +33,19 @@ let mapStateToProps = (state) => {
 }
 //  ------ Альтернативный вариант возврата объекта ------
 
-// let mapStateToProps = (state) => ( {
-//     posts: state.profilePage.posts,
-//     newPostText: state.profilePage.newPostText,
-//     profile: state.profilePage.profile
-//   }
-// )
+// let mapStateToProps = (state) => ({ posts: state.profilePage.posts, newPostText: state.profilePage.newPostText, profile: state.profilePage.profile })
 
-// withRouter возвращает новую комп. с id user - url строку
-let withRouterUrl = withRouter(ProfileContainer);
+// let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
 
-export default connect(mapStateToProps,
-    { updateNewPostText, addPost, setUserProfile, getUser }
-  )(withRouterUrl);
+// // withRouter возвращает новую комп. с id user - url строку
+// let withRouterUrl = withRouter(AuthRedirectComponent);
+
+// export default connect(mapStateToProps,
+//     { updateNewPostText, addPost, setUserProfile, getUser }
+//   )(withRouterUrl);
+
+export default compose(
+  connect(mapStateToProps, { updateNewPostText, addPost, setUserProfile, getUser }),
+  withAuthRedirect,
+  withRouter
+)(ProfileContainer)
