@@ -3,21 +3,29 @@ import { NavLink } from 'react-router-dom';
 import Preloader from '../../../common/Preloader';
 import s from './ProfileInfo.module.css';
 import userPhoto from '../../../../../src/assets/img/woman1.png';
+import ProfileStatus from './ProfileStatus';
 
 // let AuthRedirectComponent = (props) => {
 //     if (!props.isAuth) return <Redirect to={'/login'} />;
 //     return <ProfileInfo { ...props } />
 //   }
 
-  const ProfileInfo = (props) => {
+const ProfileInfo = (props) => {
+ 
   if (!props.profile) {
     return <Preloader />
   }
 
   return (
     <div className={s.describe}>
-      <div className={s.aboutMe}>
-        <div><img src={props.profile.photos.small != null ? props.profile.photos.small : userPhoto} alt="Image" /></div>
+      <div className={s.aboutMe_grid}>
+        <div>
+
+          <img src={props.profile.photos.small != null ? props.profile.photos.small : userPhoto} alt="Image" />
+          
+          <ProfileStatus status="User`s status" />
+
+        </div>
 
         <div>
           <h2>{props.profile.fullName}</h2>
