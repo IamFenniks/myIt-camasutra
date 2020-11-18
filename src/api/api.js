@@ -14,13 +14,6 @@ export const usersAPI = {
         return response.data;
       });
   },
-  getUser(userID) {
-    return instance
-      .get(`profile/` + userID)
-      .then(response => {
-        return response.data;
-      });
-  },
   getAuth() {
     return instance
     .get(`auth/me`)
@@ -41,6 +34,30 @@ export const followAPI = {
   follow(userID) {
     return instance
       .post(`follow/${userID}`, {}, instance)
+      .then(response => {
+        return response.data;
+      });
+  }
+}
+
+export const profileAPI = {
+  getUserProfile(userID) {
+    return instance
+      .get(`profile/` + userID)
+      .then(response => {
+        return response.data;
+      });
+  },
+  getUserStatus(userID) {
+    return instance
+      .get(`profile/status/` + userID)
+      .then(response => {
+        return response.data;
+      });
+  },
+  updateUserStatus(status) {
+    return instance
+      .put(`profile/status/`, { status: status })
       .then(response => {
         return response.data;
       });

@@ -1,4 +1,4 @@
-import { usersAPI } from "../api/api";
+import { profileAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -13,8 +13,8 @@ let initialState = {
         { id: 4, title: 'Post 5', message: 'Message 5', like: 34567 },
     ],
     newPostText: 'IT-Kamasutra.com',
-
-    profile: null
+    profile: null,
+    status: ""
 };
 
 const profileReduser = (state = initialState, action) => {
@@ -67,7 +67,7 @@ export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const getUser = (userId) => {
     return (dispatch) => {
         
-        usersAPI.getUser(userId)
+        profileAPI.getUserProfile(userId)
             .then(data => {
                 dispatch(setUserProfile(data));
             }

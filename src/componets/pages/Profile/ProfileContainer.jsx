@@ -13,6 +13,7 @@ class ProfileContainer extends React.Component {
     if(!userId) { userId = 10 }
 
     this.props.getUser(userId);
+    this.props.getUserStatus(userId);
 }
 
   render() {
@@ -28,7 +29,8 @@ let mapStateToProps = (state) => {
     posts: state.profilePage.posts,
     newPostText: state.profilePage.newPostText,
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    status: state.profilePage.status
   }
 }
 //  ------ Альтернативный вариант возврата объекта ------
