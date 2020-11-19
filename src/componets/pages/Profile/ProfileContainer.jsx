@@ -1,19 +1,19 @@
 import React from 'react';
-import { addPost, updateNewPostText, setUserProfile, getUser } from '../../../redux/profileReduser';
 import { connect } from 'react-redux';
-import Profile from './Profile';
 import { withRouter } from 'react-router-dom';
-import { withAuthRedirect } from '../../../hocs/withAuthRedirect';
 import { compose } from 'redux';
+import { addPost, getStatus, getUser, updateNewPostText, updateStatus } from '../../../redux/profileReduser';
+import Profile from './Profile';
 
 class ProfileContainer extends React.Component {
-  
+
   componentDidMount() { 
+    //debugger;
     let userId = this.props.match.params.userId;
     if(!userId) { userId = 10 }
 
     this.props.getUser(userId);
-    this.props.getUserStatus(userId);
+    this.props.getStatus(userId);
 }
 
   render() {
@@ -47,7 +47,7 @@ let mapStateToProps = (state) => {
 //   )(withRouterUrl);
 
 export default compose(
-  connect(mapStateToProps, { updateNewPostText, addPost, setUserProfile, getUser }),
+  connect(mapStateToProps, { updateNewPostText, addPost, getUser, getStatus, updateStatus }),
   //withAuthRedirect,
   withRouter
 )(ProfileContainer)

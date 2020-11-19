@@ -4,7 +4,6 @@ import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
-  //debugger;
   return (
     <div className={s.profile}>
       <div className={s.banner}>
@@ -17,6 +16,8 @@ const Profile = (props) => {
       <ProfileInfo 
         profile={ props.profile } 
         isAuth={ props.isAuth }
+        status={ props.status }
+        updateStatus={ props.updateStatus }
       />
 
       <MyPosts 

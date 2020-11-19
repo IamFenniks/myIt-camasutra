@@ -15,7 +15,7 @@ const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />
   }
-
+  
   return (
     <div className={s.describe}>
       <div className={s.aboutMe_grid}>
@@ -23,7 +23,7 @@ const ProfileInfo = (props) => {
 
           <img src={props.profile.photos.small != null ? props.profile.photos.small : userPhoto} alt="Image" />
           
-          <ProfileStatus status="User`s status" />
+          <ProfileStatus status={ props.status } updateStatus={ props.updateStatus } />
 
         </div>
 
