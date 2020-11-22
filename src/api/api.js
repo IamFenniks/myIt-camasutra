@@ -13,6 +13,16 @@ export const usersAPI = {
       .then(response => {
         return response.data;
       });
+  }
+}
+
+export const authAPI = {
+  login(email, password, rememberMe, captcha) {
+    return instance
+    .post(`auth/login`, { email, password, rememberMe, captcha })
+    .then(response => { 
+        return response.data
+      });
   },
   getAuth() {
     return instance
