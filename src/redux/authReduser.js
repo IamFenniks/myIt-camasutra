@@ -1,6 +1,8 @@
 import { authAPI } from "../api/api";
 
 const SET_USER_AUTH_DATA = "SET_USER_AUTH_DATA";
+const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
 
 let initialState = {
   userId: null,
@@ -19,6 +21,12 @@ const authReduser = (state = initialState, action) => {
         ...action.data,
         isAuth: true,
       };
+    case LOGIN:
+      return {
+        ...state,
+        ...action.data,
+        login: true,
+      };
 
     default:
       return state;
@@ -32,10 +40,26 @@ export const setUserAuthData = (userId, email, login) => ({
   type: SET_USER_AUTH_DATA,
   data: { userId, email, login },
 });
+export const Login = (email, password, rememberMe, captcha) => ({ 
+  type: LOGIN, 
+  data: { email, password, rememberMe, captcha } 
+});
 /* ------------------- ActionCreators End --------------------- */
 
 /* ------------------- ThunkCreators Start --------------------- */
 export const getAuth = () => {
+  return (dispatch) => {
+    authAPI.getAuth().then((data) => {
+      //debugger;
+      if (data.resultCode === 0) {
+        let { id, email, login } = data.data;
+        dispatch(setUserAuthData(id, email, login));
+      }
+    });
+  };
+};
+
+export const login = () => {
   return (dispatch) => {
     authAPI.getAuth().then((data) => {
       //debugger;

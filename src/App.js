@@ -10,7 +10,7 @@ import Sidebar from './componets/Sidebar/Sidebar';
 import UsersContainer from './componets/pages/Users/UsersContainer';
 import ProfileContainer from './componets/pages/Profile/ProfileContainer';
 import HeaderContainer from './componets/Header/HeaderContainer';
-import LoginPage from './componets/pages/Login/Login';
+import LoginPage from './componets/pages/Login/LoginContainer';
 
 // Стрелочная функция
 // Объявляем переменную-функцию "const App"  и присваиваем "=" ей стрел. функцю " () => "
