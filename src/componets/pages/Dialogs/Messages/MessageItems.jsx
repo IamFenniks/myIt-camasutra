@@ -4,7 +4,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import MessItem from './Message/MessItem';
 
 const MessageItems = (props) => {
-    debugger;
+    //debugger;
     let messData = props.messages.map( m => <MessItem messTitle={ m.title } mess={ m.mess } /> );
     return (
         <Route path='/dialogs/message'
