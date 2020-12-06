@@ -17,8 +17,7 @@ let initialState = {
         { id: 2, dialogs_id: 6, title: 'Anna message 2', mess: 'Lorem 3 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
         { id: 3, dialogs_id: 4, title: 'John message 1', mess: 'Lorem 4 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' },
         { id: 4, dialogs_id: 0, title: 'Nick`s message 2', mess: 'Lorem 5 ipsum dolor sit amet consectetur adipisicing elit. Accusantium...' }
-    ],
-    newMessageBody: ''
+    ]
 };
 
 const dialogsReduser = (state = initialState, action) => {
@@ -29,7 +28,7 @@ const dialogsReduser = (state = initialState, action) => {
             };
             
         case SEND_MESSAGE:
-            let body = state.newMessageBody;
+            let body = action.newMessageBody;
             return { ...state,
                 messages: [ ...state.messages, { id: 5, dialogs_id: 0, title: 'Nick`s message 3', mess: body }],
                 newMessageBody: ''
@@ -42,8 +41,8 @@ const dialogsReduser = (state = initialState, action) => {
 }
 
 
-export const sendMessageCreator = () => {
-    return { type: SEND_MESSAGE }
+export const sendMessageCreator = (newMessageBody) => {
+    return { type: SEND_MESSAGE, newMessageBody }
 }
 export const updateNewMessageBodyCreator = (body) => {
     return { type: UPDANE_NEW_MESSAGE_BODY, body: body }

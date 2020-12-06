@@ -5,16 +5,20 @@ import MessItem from './Message/MessItem';
 
 const MessageItems = (props) => {
     //debugger;
-    let messData = props.messages.map( m => <MessItem messTitle={ m.title } mess={ m.mess } /> );
+    let messData = props.messages.map(m => <MessItem messTitle={m.title} mess={m.mess} />);
     return (
-        <Route path='/dialogs/message'
-            render={() =>
-                <div>
-                    { messData }
-                </div>
-            }
-        />
+        <div>
+            { messData}
+        </div>
     );
 }
 
 export default MessageItems;
+
+// {<Route path='/dialogs/message'
+// render={() =>
+//     <div>
+//         { messData }
+//     </div>
+// }
+// />}

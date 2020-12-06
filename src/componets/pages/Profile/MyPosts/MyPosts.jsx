@@ -6,7 +6,8 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
   let onSubmit = (formDadta) => {
-    console.log(formDadta);
+    props.updateNewPostText(formDadta.message);
+    props.addPost();
   }
 
   let profilePosts = props.posts.map(p => <Post title={p.title} message={p.message} key={p.id} like={p.like} />);

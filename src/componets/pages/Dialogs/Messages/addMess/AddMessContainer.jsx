@@ -13,15 +13,15 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return{
         updateNewMessageBodyCreator: (body) => {dispatch(updateNewMessageBodyCreator(body));},
-        sendMessageCreator: () => {dispatch(sendMessageCreator());}
+        sendMessageCreator: (mess) => {dispatch(sendMessageCreator(mess));}
     }
 }
-
-let onSubmit = (formData) => {
-    console.log(formData);
-}
-
 const AddMess = (props) => {
+
+    let onSubmit = (formData) => {
+        props.sendMessageCreator(formData.mess);
+    }
+    
     return <AddMessReduxForm onSubmit={ onSubmit } />
 }
 
