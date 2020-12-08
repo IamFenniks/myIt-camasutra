@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Preloader from '../../../common/Preloader';
-import s from './ProfileInfo.module.css';
 import userPhoto from '../../../../../src/assets/img/woman1.png';
+import Preloader from '../../../common/preloader/Preloader';
+import s from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus';
 
 // let AuthRedirectComponent = (props) => {
