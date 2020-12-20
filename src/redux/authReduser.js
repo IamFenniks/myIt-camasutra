@@ -18,13 +18,12 @@ const authReduser = (state = initialState, action) => {
       //debugger;
       return {
         ...state,
-        ...action.data,
-        isAuth: true,
+        ...action.payload
       };
     case LOGIN:
       return {
         ...state,
-        ...action.data,
+        ...action.payload,
         login: true,
       };
 
@@ -36,13 +35,13 @@ const authReduser = (state = initialState, action) => {
 };
 
 /* ------------------- ActionCreators Start --------------------- */
-export const setUserAuthData = (userId, email, login) => ({
+export const setUserAuthData = (userId, email, login, isAuth) => ({
   type: SET_USER_AUTH_DATA,
-  data: { userId, email, login },
+  payload: { userId, email, login, isAuth },
 });
-export const Login = (email, password, rememberMe, captcha) => ({ 
+export const Login = (email, password, rememberMe) => ({ 
   type: LOGIN, 
-  data: { email, password, rememberMe, captcha } 
+  payload: { email, password, rememberMe } 
 });
 /* ------------------- ActionCreators End --------------------- */
 
@@ -53,22 +52,28 @@ export const getAuth = () => {
       //debugger;
       if (data.resultCode === 0) {
         let { id, email, login } = data.data;
-        dispatch(setUserAuthData(id, email, login));
+        dispatch(setUserAuthData(id, email, login, true));
       }
     });
   };
 };
 
-export const login = () => {
-  return (dispatch) => {
-    authAPI.getAuth().then((data) => {
-      //debugger;
-      if (data.resultCode === 0) {
-        let { id, email, login } = data.data;
-        dispatch(setUserAuthData(id, email, login));
-      }
-    });
-  };
+export const login = (email, password, rememberMe) => (dispatch) => {
+  authAPI.login(email, password, rememberMe).then(response => {
+    //debugger;
+    if (response.data.resultCode === 0) {
+      dispatch(getAuth());
+    }
+  });
+};
+
+export const logout = () => (dispatch) => {
+  authAPI.logout().then(response => {
+    //debugger;
+    if (response.data.resultCode === 0) {
+      dispatch(setUserAuthData(null, null, null, false));
+    }
+  });
 };
 
 /* ------------------- ThunkCreators End --------------------- */
