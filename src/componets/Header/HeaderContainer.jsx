@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import Header from './Header';
 import { getAuth, logout } from '../../redux/authReduser'

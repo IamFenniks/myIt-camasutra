@@ -5,6 +5,7 @@ import { maxLengthCreator, required } from '../../../utils/validators/validators
 import { Input } from '../../common/FormsControls/FormsControls';
 import { login } from '../../../redux/authReduser'
 import { Redirect } from 'react-router-dom';
+import s from './../../common/FormsControls/FormsControls.module.css';
 
 let maxLength32 = maxLengthCreator(32);
 
@@ -14,6 +15,7 @@ const LoginForm = (props) => {
         <div><Field component={ Input } validate={ [required, maxLength32] } name={"email"}    type={"email"}    placeholder={ 'email' } /></div>
         <div><Field component={ Input } validate={ [required, maxLength32] } name={"password"} type={"password"} placeholder={ 'password' } /></div>
         <div><Field component={ "input" } name={"rememberMe"} type={ 'checkbox' } /> remember me</div>
+        { props.error && <div className={ s.formCommonError }>{ props.error }</div> }
         <div><button>Login</button></div>
     </form>
  )
@@ -34,15 +36,16 @@ const Login = (props) => {
     }
 
     return (
-        <dib className="loginPage">
+        <div className="loginPage">
             <h1>Login Page</h1>
             <ReduxLoginForm onSubmit={onSubmit} />
-        </dib>
+        </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    email: state.auth.email
 });
 
 //                          TunkCreator
